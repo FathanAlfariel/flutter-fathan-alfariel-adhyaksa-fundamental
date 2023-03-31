@@ -33,7 +33,127 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Calculator"),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+      body: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(27.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Result: 0',
+                style: TextStyle(fontSize: 25),
+              ),
+              SizedBox(height: 20),
+              Column(
+                children: [
+                  TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: 'Enter first number',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  SizedBox(height: 25),
+                  TextField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelText: 'Enter second number',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // ADD Button
+                      TextButton(
+                        onPressed: () {},
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 154, 19, 233),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: Text(
+                            'ADD',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                      // END ADD Button
+                      // SUBSTRACT Button
+                      TextButton(
+                        onPressed: () {},
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 154, 19, 233),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: Text(
+                            'SUBSTRACT',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                      // END SUBSTRACT Button
+                      // MULTIPLY Button
+                      TextButton(
+                        onPressed: () {},
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 154, 19, 233),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: Text(
+                            'MULTIPLY',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                      // END MULTIPLY Button
+                      // DIVIDE Button
+                      TextButton(
+                        onPressed: () {},
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 154, 19, 233),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: Text(
+                            'DIVIDE',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                      // END DIVIDE Button
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
