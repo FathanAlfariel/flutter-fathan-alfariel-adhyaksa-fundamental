@@ -28,6 +28,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final TextEditingController firstController = TextEditingController();
+  final TextEditingController secondController = TextEditingController();
+  double result = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,13 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Result: 0',
+                'Result: $result',
                 style: TextStyle(fontSize: 25),
               ),
               SizedBox(height: 20),
               Column(
                 children: [
                   TextField(
+                    controller: firstController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: 'Enter first number',
@@ -56,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   SizedBox(height: 25),
                   TextField(
+                    controller: secondController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: 'Enter second number',
@@ -68,7 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       // ADD Button
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          double a = double.parse(firstController.text);
+                          double b = double.parse(secondController.text);
+                          setState(() {
+                            result = a + b;
+                          });
+                        },
                         child: Ink(
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 154, 19, 233),
@@ -88,7 +100,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       // END ADD Button
                       // SUBSTRACT Button
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          double a = double.parse(firstController.text);
+                          double b = double.parse(secondController.text);
+                          setState(() {
+                            result = a - b;
+                          });
+                        },
                         child: Ink(
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 154, 19, 233),
@@ -108,7 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       // END SUBSTRACT Button
                       // MULTIPLY Button
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          double a = double.parse(firstController.text);
+                          double b = double.parse(secondController.text);
+                          setState(() {
+                            result = a * b;
+                          });
+                        },
                         child: Ink(
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 154, 19, 233),
@@ -128,7 +152,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       // END MULTIPLY Button
                       // DIVIDE Button
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          double a = double.parse(firstController.text);
+                          double b = double.parse(secondController.text);
+                          setState(() {
+                            result = a / b;
+                          });
+                        },
                         child: Ink(
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 154, 19, 233),
